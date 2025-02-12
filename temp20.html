@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let products=[
+            {id:1,name:"p1",price:20},
+            {id:2,name:"p2",price:30},
+            {id:3,name:"p3",price:40},
+        ];
+        const cart={}
+        const addToCart=(id)=>
+    {
+        cart[id]=1;
+        showCart();
+       /* const ob={apple:3,mango:5};
+        if(ob['apple'])
+    {
+        ob['apple']=ob['apple']+1
+    }
+    divCart.innerHTML=ob["apple"]
+    /*else{
+        console.log(ob['apple'])
+    };
+    console.log(ob)*/
+};
+       /* const test={}
+        test["john"]=45
+        test["cathy"]=12
+        test["john"]=20
+        console.log(test);
+        console.log(cart);*/
+        const showCart=()=>
+        {
+            let str="";
+            products.map(value)=>
+        {
+            str+=`<div>${value.id}-${value.name}-${value.price}-<button>/div>`
+        });
+        divcart.innerHTML=str;
+
+        };
+
+    
+         
+        let showProducts = () => 
+        {
+            let str=" "
+            products.forEach((value) =>{
+                str+=`<div>${value.id},${value.name},${value.price}-<button onclick='addToCart(${value.id})'>Add to cart</button></div>`
+            })
+            divProducts.innerHTML=str
+
+        }
+    </script>
+</head>
+<body onload="showProducts()">
+    <h1>My store</h1> 
+    <hr>
+    <h3>products</h3>
+    <div id="divProducts"></div>
+    <h3>My Cart</h3>
+    <div id="divCart"></div>
+
+</body>
+</html>
